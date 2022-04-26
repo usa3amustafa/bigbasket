@@ -151,7 +151,13 @@ input {
 }
 
 .header-main {
-  box-shadow: 5px 5px 10px #eee;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #fefefe;
 }
 
 .cart-link {
@@ -164,7 +170,7 @@ input {
   justify-content: space-between;
   align-items: center;
 
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 .header > i {
@@ -175,6 +181,8 @@ input {
 }
 
 .nav {
+  margin-top: 5rem;
+
   padding: 1rem 0;
 
   display: flex;
@@ -359,6 +367,47 @@ input {
   margin-bottom: 1rem;
 }
 
+/* nav-links */
+
+.header {
+  position: relative;
+}
+
+.nav-links {
+  position: absolute;
+  top: 90%;
+  left: 0%;
+  height: 0;
+  width: 100%;
+  max-width: 200px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0rem;
+  overflow: hidden;
+
+  background-color: var(--sec-clr);
+
+  transition: all 200ms ease-in-out;
+}
+
+.show-links {
+  height: 29.375rem;
+}
+
+.nav-links > li {
+  border-bottom: 2px solid var(--bgc-clr);
+  padding: 1rem 0;
+
+  text-align: center;
+}
+.nav-links > li:last-child {
+  border-bottom: none;
+}
+.nav-link {
+  color: var(--bgc-clr);
+  text-decoration: none;
+}
+
 /* media queries */
 
 @media (max-width: 680px) {
@@ -412,7 +461,8 @@ input {
     font-size: 1rem;
   }
 
-  .coupon-img > img {
+  .coupon-img > img,
+  .product-top > img {
     height: 300px;
   }
 
